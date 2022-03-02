@@ -20,7 +20,7 @@ namespace UiTests.utilities
         public void StartBrowser()
         {
             //string browserName = ConfigurationManager.AppSettings["browser"];
-            InitializeBrowser("Chrome");
+            InitializeBrowser("Edge");
             driver.Manage().Window
                   .Maximize();
             driver.Url = "https://wmxrwq14uc.execute-api.us-east-1.amazonaws.com/Prod/Account/Login";

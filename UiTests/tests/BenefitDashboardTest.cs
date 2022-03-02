@@ -15,7 +15,7 @@ namespace UiTests.tests
     {
 
         [Test]
-        public void AddNewEmployee()
+        public void ValidateNewEmpModalAndCancel()
         {
             //Arrange
             LoginPage loginPage = new LoginPage(driver);
@@ -28,15 +28,24 @@ namespace UiTests.tests
             //Assert
             Assert.AreEqual("Add Employee", driver.FindElement(By.ClassName("modal-title")).Text);
            
-            //Act
+            benefitPage.Cancel().Click();
+
+        }
+        [Test]
+        public void AddNewEmployee()
+        {
+            LoginPage loginPage = new LoginPage(driver);
+            BenefitDashboard benefitPage = new BenefitDashboard(driver);
+
+            loginPage.ValidLogin("TestUser160", "OCABwco&.G>2");
+            benefitPage.SelectAddEE().Click();
             benefitPage.TypeEeFirstName().SendKeys("Howie");
             benefitPage.TypeEeLastName().SendKeys("Mandel");
             benefitPage.NumberOfDependents().SendKeys("3");
-           // benefitPage.SaveEmployee().Click();
-            benefitPage.Cancel().Click();
+            benefitPage.SaveEmployee().Click();
 
-            //Assert
-            Assert.Pass("Test Passed");
+            Assert.Pass("New employee added.");
+
         }
 
     }
