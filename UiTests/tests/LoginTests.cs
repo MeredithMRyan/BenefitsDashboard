@@ -16,12 +16,7 @@ namespace UiTests
             loginPage.TypePassword().SendKeys("OCABwco&.G>2");
             loginPage.ClickButton().Click();
 
-            //add valid login assertion
-
-           
-
-            //edit employee
-            //driver.FindElement(By.XPath("(//i[@class='fas fa-edit'])[2]")).Click();
+            Assert.AreEqual("Employees - Paylocity Benefits Dashboard", driver.Title);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace UiTests.pageObjects
         private IWebElement password;
 
         [FindsBy(How = How.XPath, Using = "//button[@type='submit']")]
-        private IWebElement button;
+        private IWebElement loginButton;
 
         public void ValidLogin(string username, string password)
         {
@@ -33,7 +33,7 @@ namespace UiTests.pageObjects
         }
         public IWebElement ClickButton()
         {
-            return button;
+            return loginButton;
         }
 
         public IWebElement TypeUserName()
